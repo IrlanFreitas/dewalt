@@ -1,13 +1,18 @@
 import { Negociacao } from "./negociacao.js";
 
 export class Negociacoes {
-    private negociacoes: Array<Negociacao> = [];
+
+    // ! Duas formas de indicar que é array genérico
+    private negociacoes: Negociacao[] = [];
+    // private negociacoes: Array<Negociacao> = [];
 
     adiciona(negociacao: Negociacao): void {
         this.negociacoes.push(negociacao);
     }
 
-    lista(): ReadonlyArray<Negociacao> {
+    // ! Syntax Sugar para array somente de leitura
+    lista(): readonly Negociacao[] {
+    // lista(): ReadonlyArray<Negociacao> {
         return this.negociacoes;
     }
 }

@@ -1,19 +1,19 @@
 export class Negociacao {
-    constructor(data, quantidade, valor) {
-        this._data = data;
-        this._quantidade = quantidade;
-        this._valor = valor;
+    constructor(
+    // private _data: Date,
+    // private _quantidade: number, 
+    // private _valor: number
+    // ! Forma defensiva que atribuir os dados e não conseguir modifica-los depois
+    _data, quantidade, valor) {
+        this._data = _data;
+        this.quantidade = quantidade;
+        this.valor = valor;
     }
     get data() {
-        return this._data;
-    }
-    get quantidade() {
-        return this._quantidade;
-    }
-    get valor() {
-        return this._valor;
+        // * Devolver uma nova referência para que não seja alterada
+        return new Date(this._data.getTime());
     }
     get volume() {
-        return this._quantidade * this._valor;
+        return this.quantidade * this.valor;
     }
 }
