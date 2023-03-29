@@ -17,4 +17,4 @@ export class Negociacoes {
     }
 }
 
-new Negociacoes().lista();
+// new Negociacoes().lista();
